@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1042,
+        "requester": "Juan Dela Cruz",
+        "requesterEmail": "juan.delacruz@example.com",
+        "subject": "POS Terminal Not Printing",
+        "description": "The POS terminal is processing transactions but the receipt printer is not printing.",
+        "category": "POS",
+        "priority": "High",
+        "status": "Open",
+        "assignee": "Brian Pizarro",
+        "createdAt": "August 31, 2026 09:15 AM",
+        "messages": [
+            {
+                "sender": "Juan Dela Cruz",
+                "type": "reply",
+                "message": "The POS terminal is processing transactions but the receipt printer is not printing.",
+                "time": "09:15 AM"
+            },
+            {
+                "sender": "Brian Pizarro",
+                "type": "reply",
+                "message": "Hi Juan, I'll check the printer connection and configuration.",
+                "time": "09:24 AM"
+            }
+        ]
+    },
+    {
+        "id": 1041,
+        "requester": "Maria Santos",
+        "requesterEmail": "maria.santos@example.com",
+        "subject": "Unable to Login to Sales Application",
+        "description": "The application shows invalid credentials even though the user is using the correct password.",
+        "category": "Software",
+        "priority": "Normal",
+        "status": "Pending",
+        "assignee": "John Santos",
+        "createdAt": "August 31, 2026 08:45 AM",
+        "messages": [
+            {
+                "sender": "Maria Santos",
+                "type": "reply",
+                "message": "I cannot login to the Sales application. It keeps saying invalid credentials.",
+                "time": "08:45 AM"
+            },
+            {
+                "sender": "John Santos",
+                "type": "reply",
+                "message": "I'll verify your account status and check if it is locked.",
+                "time": "09:00 AM"
+            }
+        ]
+    },
+    {
+        "id": 1040,
+        "requester": "Carlos Reyes",
+        "requesterEmail": "carlos.reyes@example.com",
+        "subject": "Internet Connection Down",
+        "description": "The store currently has no internet connection.",
+        "category": "Network",
+        "priority": "Urgent",
+        "status": "Open",
+        "assignee": "Maria Cruz",
+        "createdAt": "August 31, 2026 08:20 AM",
+        "messages": [
+            {
+                "sender": "Carlos Reyes",
+                "type": "reply",
+                "message": "The entire store has lost internet connection.",
+                "time": "08:20 AM"
+            }
+        ]
+    },
+    {
+        "id": 1039,
+        "requester": "Angela Garcia",
+        "requesterEmail": "angela.garcia@example.com",
+        "subject": "Keyboard Not Working",
+        "description": "The keyboard connected to the cashier workstation is not responding.",
+        "category": "Hardware",
+        "priority": "Low",
+        "status": "Solved",
+        "assignee": "Brian Pizarro",
+        "createdAt": "August 30, 2026 04:10 PM",
+        "messages": [
+            {
+                "sender": "Angela Garcia",
+                "type": "reply",
+                "message": "Keyboard is not responding.",
+                "time": "04:10 PM"
+            },
+            {
+                "sender": "Brian Pizarro",
+                "type": "reply",
+                "message": "The USB connection was loose. I reconnected it and tested the keyboard.",
+                "time": "04:25 PM"
+            }
+        ]
+    },
+    {
+        "id": 1038,
+        "requester": "Mark Villanueva",
+        "requesterEmail": "mark.villanueva@example.com",
+        "subject": "Password Reset Request",
+        "description": "User needs assistance resetting their account password.",
+        "category": "Account",
+        "priority": "Normal",
+        "status": "Closed",
+        "assignee": "John Santos",
+        "createdAt": "August 30, 2026 02:30 PM",
+        "messages": [
+            {
+                "sender": "Mark Villanueva",
+                "type": "reply",
+                "message": "Please help me reset my account password.",
+                "time": "02:30 PM"
+            },
+            {
+                "sender": "John Santos",
+                "type": "reply",
+                "message": "Password has been reset successfully.",
+                "time": "02:42 PM"
+            },
+            {
+                "sender": "Brian Pizarro",
+                "type": "reply",
+                "message": "Hello",
+                "time": "01:39 PM"
+            }
+        ]
+    },
+    {
+        "id": 1043,
+        "requester": "Maria Ozawa",
+        "requesterEmail": "maria@gmail.com",
+        "subject": "Account Problem",
+        "description": "User cannot log in to his/her account due to many attempts to log in and need to reset the account.",
+        "category": "Account",
+        "priority": "Normal",
+        "status": "Solved",
+        "assignee": "Brian Pizarro",
+        "createdAt": "8/31/2026, 1:43:07 PM",
+        "messages": [
+            {
+                "sender": "Maria Ozawa",
+                "type": "reply",
+                "message": "User cannot log in to his/her account due to many attempts to log in and need to reset the account.",
+                "time": "01:43 PM"
+            },
+            {
+                "sender": "Brian Pizarro",
+                "type": "reply",
+                "message": "Successfully reset the password, the user my now log in to her/his account.",
+                "time": "01:44 PM"
+            }
+        ]
+    }
+]
