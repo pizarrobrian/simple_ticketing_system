@@ -1,0 +1,1187 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 240px;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 20px;
+
+}
+
+
+.logo {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 30px;
+
+}
+
+
+.agent {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #1f2937;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.agent small {
+
+    display: block;
+
+    color: #9ca3af;
+
+    margin-top: 3px;
+
+}
+
+
+.avatar {
+
+    width: 38px;
+    height: 38px;
+
+    background: #2563eb;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+.nav-btn {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #d1d5db;
+
+    text-align: left;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-bottom: 5px;
+
+}
+
+
+.nav-btn:hover,
+.nav-btn.active {
+
+    background: #1f2937;
+
+    color: white;
+
+}
+
+
+.nav-btn span {
+
+    float: right;
+
+    background: #374151;
+
+    border-radius: 15px;
+
+    padding: 2px 7px;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main {
+
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+}
+
+
+.topbar {
+
+    height: 80px;
+
+    background: white;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 30px;
+
+}
+
+
+.topbar h1 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+}
+
+
+.topbar p {
+
+    margin: 5px 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.page {
+
+    padding: 30px;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn {
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+.primary-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.secondary-btn {
+
+    background: white;
+
+    border:
+        1px solid #d1d5db;
+
+    padding: 10px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+
+.link-btn {
+
+    border: none;
+
+    background: none;
+
+    color: #2563eb;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.stat {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 22px;
+
+}
+
+
+.stat span {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+}
+
+
+.stat strong {
+
+    font-size: 28px;
+
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.panel {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.panel-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.panel-title h2 {
+
+    margin: 0;
+
+    font-size: 17px;
+
+}
+
+
+.panel-title small {
+
+    color: #6b7280;
+
+}
+
+
+/* =====================================================
+   RECENT TICKETS
+===================================================== */
+
+.recent-ticket {
+
+    padding: 15px 0;
+
+    border-bottom:
+        1px solid #eee;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+}
+
+
+.recent-ticket:hover {
+
+    background: #fafafa;
+
+}
+
+
+.recent-ticket strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+.recent-ticket small {
+
+    color: #6b7280;
+
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.toolbar {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.toolbar input {
+
+    flex: 1;
+
+    padding: 10px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 6px;
+
+}
+
+
+.toolbar select {
+
+    padding: 10px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+th {
+
+    background: #f9fafb;
+
+    text-align: left;
+
+    padding: 12px;
+
+    font-size: 12px;
+
+    color: #6b7280;
+
+}
+
+
+td {
+
+    padding: 14px 12px;
+
+    border-bottom:
+        1px solid #eee;
+
+    font-size: 13px;
+
+}
+
+
+tbody tr {
+
+    cursor: pointer;
+
+}
+
+
+tbody tr:hover {
+
+    background: #f9fafb;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 100;
+
+}
+
+
+.modal-box {
+
+    width: 650px;
+
+    max-width: 95%;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+}
+
+
+.modal-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.modal-header h2 {
+
+    margin: 0;
+
+}
+
+
+.modal-header small {
+
+    color: #6b7280;
+
+}
+
+
+.close-btn {
+
+    border: none;
+
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #6b7280;
+
+}
+
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 6px;
+
+}
+
+
+input,
+select,
+textarea {
+
+    font-family: inherit;
+
+}
+
+
+.modal-box input,
+.modal-box select,
+.modal-box textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.modal-box textarea {
+
+    height: 130px;
+
+    resize: vertical;
+
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =====================================================
+   TICKET DETAIL
+===================================================== */
+
+.ticket-modal {
+
+    width: 1000px;
+
+    max-width: 95%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 10px;
+
+}
+
+
+.ticket-header {
+
+    padding: 25px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+.ticket-header h2 {
+
+    margin: 5px 0;
+
+}
+
+
+.ticket-header small {
+
+    color: #6b7280;
+
+}
+
+
+.ticket-body {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+}
+
+
+/* =====================================================
+   CONVERSATION
+===================================================== */
+
+.conversation {
+
+    padding: 25px;
+
+    border-right:
+        1px solid #e5e7eb;
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.message {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.message-avatar {
+
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+.message-content {
+
+    background: #f9fafb;
+
+    border-radius: 7px;
+
+    padding: 12px;
+
+    flex: 1;
+
+}
+
+
+.message-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+}
+
+
+.message-header strong {
+
+    font-size: 13px;
+
+}
+
+
+.message-header small {
+
+    color: #9ca3af;
+
+}
+
+
+.message-content p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.internal-note .message-content {
+
+    background: #fff7ed;
+
+    border:
+        1px solid #fed7aa;
+
+}
+
+
+/* =====================================================
+   REPLY
+===================================================== */
+
+.reply-box {
+
+    margin-top: auto;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+}
+
+
+.reply-tabs {
+
+    display: flex;
+
+    background: #f9fafb;
+
+    border-bottom:
+        1px solid #eee;
+
+}
+
+
+.reply-tabs button {
+
+    padding: 10px 15px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+}
+
+
+.reply-tabs button.active {
+
+    color: #2563eb;
+
+    border-bottom:
+        2px solid #2563eb;
+
+    font-weight: bold;
+
+}
+
+
+.reply-box textarea {
+
+    width: 100%;
+
+    border: none;
+
+    resize: none;
+
+    padding: 15px;
+
+    height: 100px;
+
+    outline: none;
+
+}
+
+
+.reply-footer {
+
+    padding: 10px;
+
+    border-top:
+        1px solid #eee;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.reply-footer span {
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   TICKET INFO
+===================================================== */
+
+.ticket-info {
+
+    padding: 25px;
+
+    background: #fafafa;
+
+}
+
+
+.info {
+
+    margin-bottom: 22px;
+
+}
+
+
+.info label {
+
+    text-transform: uppercase;
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+}
+
+
+.info strong {
+
+    display: block;
+
+    font-size: 14px;
+
+}
+
+
+.info small {
+
+    color: #6b7280;
+
+}
+
+
+.info select {
+
+    width: 100%;
+
+    padding: 9px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 6px;
+
+}
+
+
+.save-btn {
+
+    width: 100%;
+
+    padding: 11px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.delete-btn {
+
+    width: 100%;
+
+    padding: 10px;
+
+    background: white;
+
+    color: #dc2626;
+
+    border:
+        1px solid #fecaca;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.badge {
+
+    padding: 5px 8px;
+
+    border-radius: 15px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+
+.open {
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+}
+
+
+.pending {
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+}
+
+
+.solved {
+
+    background: #dcfce7;
+
+    color: #166534;
+
+}
+
+
+.closed {
+
+    background: #e5e7eb;
+
+    color: #374151;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 190px;
+
+    }
+
+    .main {
+
+        margin-left: 190px;
+
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .ticket-body {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+    }
+
+    .main {
+
+        margin-left: 0;
+
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .toolbar {
+
+        flex-direction: column;
+
+    }
+
+    .form-row {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
