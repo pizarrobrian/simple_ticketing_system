@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SupportDesk</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        🎫 SupportDesk
+    </div>
+
+
+    <div class="agent">
+
+        <div class="avatar">
+            JD
+        </div>
+
+        <div>
+
+            <strong>
+                John Doe
+            </strong>
+
+            <small>
+                Support Agent
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <button
+            class="nav-btn active"
+            onclick="showPage('dashboard')"
+        >
+            📊 Dashboard
+        </button>
+
+
+        <button
+            class="nav-btn"
+            onclick="showPage('tickets')"
+        >
+            🎫 Tickets
+
+            <span id="ticketCount">
+                0
+            </span>
+
+        </button>
+
+
+        <button
+            class="nav-btn"
+            onclick="showPage('reports')"
+        >
+            📈 Reports
+        </button>
+
+    </nav>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="main">
+
+
+<header class="topbar">
+
+    <div>
+
+        <h1 id="pageTitle">
+            Dashboard
+        </h1>
+
+        <p id="pageDescription">
+            Overview of your support tickets
+        </p>
+
+    </div>
+
+
+    <button
+        class="primary-btn"
+        onclick="openCreateTicket()"
+    >
+        + New Ticket
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<section
+    id="dashboardPage"
+    class="page"
+>
+
+
+<div class="stats">
+
+
+    <div class="stat">
+
+        <span>
+            Total Tickets
+        </span>
+
+        <strong id="totalTickets">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span>
+            Open
+        </span>
+
+        <strong id="openTickets">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span>
+            Pending
+        </span>
+
+        <strong id="pendingTickets">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span>
+            Solved
+        </span>
+
+        <strong id="solvedTickets">
+            0
+        </strong>
+
+    </div>
+
+
+</div>
+
+
+<div class="panel">
+
+    <div class="panel-title">
+
+        <div>
+
+            <h2>
+                Recent Tickets
+            </h2>
+
+            <small>
+                Latest customer requests
+            </small>
+
+        </div>
+
+
+        <button
+            class="link-btn"
+            onclick="showPage('tickets')"
+        >
+            View All
+        </button>
+
+    </div>
+
+
+    <div id="recentTickets"></div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     TICKETS
+====================================================== -->
+
+<section
+    id="ticketsPage"
+    class="page hidden"
+>
+
+
+<div class="panel">
+
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search tickets..."
+        oninput="renderTickets()"
+    >
+
+
+    <select
+        id="statusFilter"
+        onchange="renderTickets()"
+    >
+
+        <option value="all">
+            All Status
+        </option>
+
+        <option value="Open">
+            Open
+        </option>
+
+        <option value="Pending">
+            Pending
+        </option>
+
+        <option value="Solved">
+            Solved
+        </option>
+
+        <option value="Closed">
+            Closed
+        </option>
+
+    </select>
+
+
+    <select
+        id="priorityFilter"
+        onchange="renderTickets()"
+    >
+
+        <option value="all">
+            All Priority
+        </option>
+
+        <option value="Urgent">
+            Urgent
+        </option>
+
+        <option value="High">
+            High
+        </option>
+
+        <option value="Normal">
+            Normal
+        </option>
+
+        <option value="Low">
+            Low
+        </option>
+
+    </select>
+
+
+    <select
+        id="categoryFilter"
+        onchange="renderTickets()"
+    >
+
+        <option value="all">
+            All Categories
+        </option>
+
+        <option value="POS">
+            POS
+        </option>
+
+        <option value="Software">
+            Software
+        </option>
+
+        <option value="Hardware">
+            Hardware
+        </option>
+
+        <option value="Network">
+            Network
+        </option>
+
+        <option value="Account">
+            Account
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>
+        ID
+    </th>
+
+    <th>
+        Requester
+    </th>
+
+    <th>
+        Subject
+    </th>
+
+    <th>
+        Category
+    </th>
+
+    <th>
+        Priority
+    </th>
+
+    <th>
+        Status
+    </th>
+
+    <th>
+        Assignee
+    </th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="ticketTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     REPORTS
+====================================================== -->
+
+<section
+    id="reportsPage"
+    class="page hidden"
+>
+
+
+<div class="panel">
+
+    <h2>
+        Ticket Statistics
+    </h2>
+
+    <div id="reports"></div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     CREATE TICKET MODAL
+====================================================== -->
+
+<div
+    id="createModal"
+    class="modal hidden"
+>
+
+
+<div class="modal-box">
+
+    <div class="modal-header">
+
+        <div>
+
+            <h2>
+                Create Ticket
+            </h2>
+
+            <small>
+                Create a new customer support request
+            </small>
+
+        </div>
+
+
+        <button
+            onclick="closeCreateTicket()"
+            class="close-btn"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+<form id="ticketForm">
+
+
+<label>
+    Client / Requester
+</label>
+
+<input
+    id="requester"
+    type="text"
+    placeholder="Juan Dela Cruz"
+    required
+>
+
+
+<label>
+    Client Email
+</label>
+
+<input
+    id="requesterEmail"
+    type="email"
+    placeholder="juan@example.com"
+    required
+>
+
+
+<label>
+    Subject
+</label>
+
+<input
+    id="subject"
+    type="text"
+    placeholder="POS terminal problem"
+    required
+>
+
+
+<div class="form-row">
+
+
+<div>
+
+<label>
+    Category
+</label>
+
+<select id="category">
+
+    <option value="POS">
+        POS
+    </option>
+
+    <option value="Software">
+        Software
+    </option>
+
+    <option value="Hardware">
+        Hardware
+    </option>
+
+    <option value="Network">
+        Network
+    </option>
+
+    <option value="Account">
+        Account
+    </option>
+
+    <option value="Other">
+        Other
+    </option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+    Priority
+</label>
+
+<select id="priority">
+
+    <option value="Low">
+        Low
+    </option>
+
+    <option value="Normal" selected>
+        Normal
+    </option>
+
+    <option value="High">
+        High
+    </option>
+
+    <option value="Urgent">
+        Urgent
+    </option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<label>
+    Assignee
+</label>
+
+<select id="assignee">
+
+    <option>
+        John Doe
+    </option>
+
+    <option>
+        John Santos
+    </option>
+
+    <option>
+        Maria Cruz
+    </option>
+
+    <option>
+        Unassigned
+    </option>
+
+</select>
+
+
+<label>
+    Description
+</label>
+
+<textarea
+    id="description"
+    placeholder="Describe the customer's problem..."
+    required
+></textarea>
+
+
+<div class="modal-actions">
+
+    <button
+        type="button"
+        class="secondary-btn"
+        onclick="closeCreateTicket()"
+    >
+        Cancel
+    </button>
+
+    <button
+        type="submit"
+        class="primary-btn"
+    >
+        Create Ticket
+    </button>
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     TICKET DETAIL MODAL
+====================================================== -->
+
+<div
+    id="ticketModal"
+    class="modal hidden"
+>
+
+
+<div class="ticket-modal">
+
+
+<div class="ticket-header">
+
+    <div>
+
+        <small id="detailId">
+            #1042
+        </small>
+
+        <h2 id="detailSubject">
+            Ticket Subject
+        </h2>
+
+    </div>
+
+
+    <button
+        onclick="closeTicket()"
+        class="close-btn"
+    >
+        ×
+    </button>
+
+</div>
+
+
+<div class="ticket-body">
+
+
+<!-- CONVERSATION -->
+
+<div class="conversation">
+
+    <div id="messages"></div>
+
+
+    <div class="reply-box">
+
+
+        <div class="reply-tabs">
+
+            <button
+                id="replyTab"
+                class="active"
+                onclick="setReplyType('reply')"
+            >
+                Reply
+            </button>
+
+            <button
+                id="noteTab"
+                onclick="setReplyType('note')"
+            >
+                Internal Note
+            </button>
+
+        </div>
+
+
+        <textarea
+            id="reply"
+            placeholder="Type your reply..."
+        ></textarea>
+
+
+        <div class="reply-footer">
+
+            <span id="replyMode">
+                Public reply
+            </span>
+
+
+            <button
+                class="primary-btn"
+                onclick="sendReply()"
+            >
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- INFORMATION -->
+
+<aside class="ticket-info">
+
+
+<div class="info">
+
+    <label>
+        Requester
+    </label>
+
+    <strong id="infoRequester">
+        -
+    </strong>
+
+    <small id="infoEmail">
+        -
+    </small>
+
+</div>
+
+
+<div class="info">
+
+    <label>
+        Status
+    </label>
+
+    <select id="detailStatus">
+
+        <option>
+            Open
+        </option>
+
+        <option>
+            Pending
+        </option>
+
+        <option>
+            Solved
+        </option>
+
+        <option>
+            Closed
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="info">
+
+    <label>
+        Priority
+    </label>
+
+    <select id="detailPriority">
+
+        <option>
+            Urgent
+        </option>
+
+        <option>
+            High
+        </option>
+
+        <option>
+            Normal
+        </option>
+
+        <option>
+            Low
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="info">
+
+    <label>
+        Assignee
+    </label>
+
+    <select id="detailAssignee">
+
+        <option>
+            John Doe
+        </option>
+
+        <option>
+            John Santos
+        </option>
+
+        <option>
+            Maria Cruz
+        </option>
+
+        <option>
+            Unassigned
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="info">
+
+    <label>
+        Category
+    </label>
+
+    <strong id="infoCategory">
+        -
+    </strong>
+
+</div>
+
+
+<div class="info">
+
+    <label>
+        Created
+    </label>
+
+    <small id="infoCreated">
+        -
+    </small>
+
+</div>
+
+
+<button
+    class="save-btn"
+    onclick="saveTicket()"
+>
+    Save Changes
+</button>
+
+
+<button
+    class="delete-btn"
+    onclick="deleteTicket()"
+>
+    Delete Ticket
+</button>
+
+
+</aside>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
