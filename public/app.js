@@ -562,8 +562,18 @@ document
                     );
 
 
-                const data =
-                    await response.json();
+                    const responseText = await response.text();
+
+                    console.log("Create ticket response:", responseText);
+                    
+                    let data;
+                    
+                    try {
+                        data = JSON.parse(responseText);
+                    } catch (error) {
+                        console.error("Server returned non-JSON:", responseText);
+                        throw new Error("Server returned HTML instead of JSON.");
+                    }
 
 
                 if (!response.ok) {

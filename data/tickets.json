@@ -154,5 +154,25 @@
                 "time": "01:44 PM"
             }
         ]
+    },
+    {
+        "id": 1044,
+        "requester": "Juan Crus",
+        "requesterEmail": "juan@gmail.com",
+        "subject": "Account Password Reset",
+        "description": "Invalid credintials ",
+        "category": "Account",
+        "priority": "Normal",
+        "status": "Open",
+        "assignee": "John Doe",
+        "createdAt": "9/9/2026, 11:20:21 PM",
+        "messages": [
+            {
+                "sender": "Juan Crus",
+                "type": "reply",
+                "message": "Invalid credintials ",
+                "time": "11:20 PM"
+            }
+        ]
     }
 ]
